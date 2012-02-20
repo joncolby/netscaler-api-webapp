@@ -1,0 +1,2 @@
+<g:each in="${lbvservers.sort{ it.name } }" status="i" var="lbvserver">lbvserver_name: ${lbvserver.name} | lbvserver_ip: ${lbvserver.ipAddress} | lbvserver_port: ${lbvserver.port} | lbvserver_state: ${lbvserver.state} | lbvserver_datacenter: ${lbvserver.dataCenter} | netscaler: ${lbvserver.netscaler.ipAddress} | updated: <g:formatDate date="${lbvserver.lastUpdated}" type="datetime" style="SHORT" timeStyle="MEDIUM" locale="de" /> <BR/>
+</g:each>

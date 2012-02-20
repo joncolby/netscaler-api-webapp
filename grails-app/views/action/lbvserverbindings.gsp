@@ -1,0 +1,2 @@
+<g:each in="${lbvservers.sort { it.name } }" status="i" var="lbvserver"><g:each in="${lbvserver.services.sort { it.name }}" status="c" var="service">lbvserver_name: ${lbvserver.name} (${lbvserver.state}) | lbvserver_ip: ${lbvserver.ipAddress} | service_name: ${service.name} | service_ip: ${service.ipAddress} | service_state: ${service.state} | service_datacenter: ${service.dataCenter} | updated: <g:formatDate date="${service.lastUpdated}" type="datetime" style="SHORT" timeStyle="MEDIUM" locale="de" /> <BR/>
+</g:each></g:each>

@@ -1,0 +1,98 @@
+<g:set var="context" value="${createLinkTo(dir: '/')}" />
+<html>
+    <head>
+        <title>Netscaler REST API Help</title>
+	<!-- meta name="layout" content="main" / -->
+    </head>
+    <body>
+        <h1 style="margin-left:20px;">Netscaler REST API Help</h1>
+        <p style="margin-left:20px;width:80%">Functions are available for an <b>lbvserver</b> and a <b>service</b>.<BR/>
+        An <b>lbvserver</b> is the "virtual service" name.<BR/>
+        A <b>service</b> is usually a particular host that is bound to the lbvserver.
+        </p>
+        <div class="dialog" style="margin-left:20px;width:60%;">
+
+        <h2>Lbvserver functions:</h2>
+
+        <table border="1">
+        <tr>
+        <th>function</th>
+        <th>rest syntax</th>
+        <th>example</th>
+        </tr>
+
+        <tr>
+        <td>Show bindings and status of an lbserver</td>
+        <td>${context}lbvserver/read/<b>lbvserver</b>[?datacenter=]</td>
+        <td>${context}lbvserver/read/<b>replyts-rz</b></td>
+        </tr>
+
+        <tr>
+        <td>Show bindings and status of ALL lbservers</td>
+        <td><a href="<g:createLink controller="lbvserver" action="read" />"><g:createLink action="read" controller="lbvserver" /></a>[?datacenter=]</td>
+        <td><a href="<g:createLink controller="lbvserver" action="read" />"><g:createLink action="read" controller="lbvserver" /></a></td>
+        </tr>
+
+
+        <tr>
+        <td>Show status of an lbserver</td>
+        <td>${context}lbvserver/list/<b>lbvserver</b>[?datacenter=]</td>
+        <td>${context}lbvserver/list/<b>replyts-rz</b></td>
+        </tr>
+
+        <tr>
+        <td>Show status of ALL lbservers</td>
+        <td><a href="<g:createLink controller="lbvserver" action="list" />"><g:createLink action="list" controller="lbvserver" /></a>  [?datacenter=]</td>
+        <td><a href="<g:createLink controller="lbvserver" action="list" />"><g:createLink action="list" controller="lbvserver" /></a></td>
+        </tr>
+
+
+
+
+        </table>
+
+
+      <h2>Service functions:</h2>
+
+        <table border="1">
+        <tr>
+        <th>function</th>
+        <th>rest syntax</th>
+        <th>example</th>
+        </tr>
+
+
+        <tr>
+        <td>Take service (host) IN SERVICE</td>
+        <td>${context}service/in/<b>host-name</b></td>
+        <td>${context}service/in/<b>anyserver99-9</b></td>
+        </tr>
+
+         <tr>
+        <td>Take service (host) OUT OF SERVICE</td>
+        <td>${context}service/out/<b>host-name</b></td>
+        <td>${context}service/out/<b>anyserver99-9</b></td>
+        </tr>
+
+        </table>
+
+
+       <h2>Other functions:</h2>
+
+        <table border="1">
+        <tr>
+        <th>function</th>
+        <th>rest syntax</th>
+        <th>example</th>
+        </tr>
+
+        <tr>
+        <td>get port(s) for a host or service name</td>
+        <td>${context}service/port/<b>host-name</b>|<b>service name</b></td>
+        <td>${context}service/port/<b>replyts46-1</b></td>
+        </tr>
+
+        </table>
+
+    </body>
+</html>
