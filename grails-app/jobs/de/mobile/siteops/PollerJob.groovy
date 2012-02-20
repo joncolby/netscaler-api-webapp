@@ -11,7 +11,7 @@ class PollerJob {
     static triggers = {
        //cron name: 'poller', startDelay: 10000, cronExpression: "0 0/60 * * * ?"
        simple name:'init-poller', startDelay:10000, repeatCount: 1
-       cron name: 'poller', startDelay: 10000, cronExpression: "0 0/5 * * * ?"
+       cron name: 'poller', startDelay: 10000, cronExpression: "0 0/2 * * * ?"
     }
 
     def execute() {
@@ -26,7 +26,7 @@ class PollerJob {
         }
 
         // remove lbvservers and service which were not updated for X minutes
-        def maxMinutes = 20
+        def maxMinutes = 10
 
         def now = new Date()
         def c = Calendar.getInstance()

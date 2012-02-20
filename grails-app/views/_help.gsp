@@ -62,15 +62,22 @@
         </tr>
 
 
+       <tr>
+       <td>Show service status</td>
+       <td>${context}service/read/<b>hostname</b> | <b>servicename</b></td>
+       <td>${context}service/read/<b>anyserver99-9</b></td>
+       </tr>
+
+
         <tr>
         <td>Take service (host) IN SERVICE</td>
-        <td>${context}service/in/<b>host-name</b></td>
+        <td>${context}service/in/<b>hostname</b> | <b>servicename</b></td>
         <td>${context}service/in/<b>anyserver99-9</b></td>
         </tr>
 
          <tr>
         <td>Take service (host) OUT OF SERVICE</td>
-        <td>${context}service/out/<b>host-name</b></td>
+        <td>${context}service/out/<b>hostname</b> | <b>servicename</b></td>
         <td>${context}service/out/<b>anyserver99-9</b></td>
         </tr>
 

@@ -1,0 +1,69 @@
+2012-02-20 15:24:42,442 [main] INFO  http11.Http11Protocol  - Initializing Coyote HTTP/1.1 on http-8080
+2012-02-20 15:24:42,444 [main] INFO  core.StandardService  - Starting service Tomcat
+2012-02-20 15:24:42,446 [main] INFO  core.StandardEngine  - Starting Servlet Engine: Apache Tomcat/6.0-snapshot
+2012-02-20 15:24:42,638 [main] INFO  startup.ContextConfig  - No default web.xml
+2012-02-20 15:24:42,949 [main] INFO  digester.Digester  - TLD skipped. URI: http://www.springframework.org/tags is already defined
+2012-02-20 15:24:43,033 [main] INFO  digester.Digester  - TLD skipped. URI: http://java.sun.com/jsp/jstl/core is already defined
+2012-02-20 15:24:43,069 [main] INFO  digester.Digester  - TLD skipped. URI: http://java.sun.com/jsp/jstl/fmt is already defined
+2012-02-20 15:24:43,172 [main] INFO  [localhost].[/nslb]  - Initializing Spring root WebApplicationContext
+2012-02-20 15:24:44,644 [main] INFO  spring.BeanBuilder  - [RuntimeConfiguration] Configuring data source for environment: DEVELOPMENT
+2012-02-20 15:24:46,357 [main] WARN  config.ConfigurationFactory  - No configuration found. Configuring ehcache from ehcache-failsafe.xml  found in the classpath: jar:file:/Users/jcolby/.ivy2/cache/net.sf.ehcache/ehcache-core/jars/ehcache-core-1.7.1.jar!/ehcache-failsafe.xml
+2012-02-20 15:24:47,058 [main] INFO  core.SchedulerSignalerImpl  - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2012-02-20 15:24:47,059 [main] INFO  core.QuartzScheduler  - Quartz Scheduler v.1.7.3 created.
+2012-02-20 15:24:47,060 [main] INFO  simpl.RAMJobStore  - RAMJobStore initialized.
+2012-02-20 15:24:47,061 [main] INFO  impl.StdSchedulerFactory  - Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2012-02-20 15:24:47,061 [main] INFO  impl.StdSchedulerFactory  - Quartz scheduler version: 1.7.3
+2012-02-20 15:24:47,061 [main] INFO  core.QuartzScheduler  - JobFactory set to: org.codehaus.groovy.grails.plugins.quartz.GrailsJobFactory@39a69290
+2012-02-20 15:24:47,605 [main] INFO  scaffolding.DefaultGrailsTemplateGenerator  - Scaffolding template generator set to use resource loader org.codehaus.groovy.grails.commons.spring.GrailsWebApplicationContext@7c1d740c: startup date [Mon Feb 20 15:24:45 CET 2012]; parent: Root WebApplicationContext
+2012-02-20 15:24:48,211 [Timer-0] INFO  utils.UpdateChecker  - New update(s) found: 1.8.5 [http://www.terracotta.org/kit/reflector?kitID=default&pageID=QuartzChangeLog]
+2012-02-20 15:24:49,033 [main] INFO  context.GrailsConfigUtils  - [GrailsContextLoader] Grails application loaded.
+2012-02-20 15:24:49,081 [main] INFO  core.QuartzScheduler  - Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2012-02-20 15:24:50,178 [main] INFO  [localhost].[/nslb]  - Initializing Spring FrameworkServlet 'grails'
+2012-02-20 15:24:50,318 [main] INFO  http11.Http11Protocol  - Starting Coyote HTTP/1.1 on http-8080
+2012-02-20 15:24:51,365 [http-8080-1] WARN  util.GrailsUtil  - [DEPRECATED] Tag [createLinkTo] is deprecated please use [resource] instead
+2012-02-20 15:24:57,345 [quartzScheduler_Worker-1] INFO  siteops.PollerJob  - starting poller job at Mon Feb 20 15:24:57 CET 2012
+2012-02-20 15:26:01,871 [quartzScheduler_Worker-2] INFO  siteops.PollerJob  - starting poller job at Mon Feb 20 15:26:01 CET 2012
+2012-02-20 15:26:30,732 [quartzScheduler_Worker-3] INFO  siteops.PollerJob  - starting poller job at Mon Feb 20 15:26:30 CET 2012
+2012-02-20 15:28:22,161 [http-8080-1] WARN  util.GrailsUtil  - [DEPRECATED] Tag [createLinkTo] is deprecated please use [resource] instead
+2012-02-20 15:29:05,922 [http-8080-1] WARN  util.GrailsUtil  - [DEPRECATED] Tag [createLinkTo] is deprecated please use [resource] instead
+2012-02-20 15:29:27,181 [http-8080-1] WARN  util.GrailsUtil  - [DEPRECATED] Tag [createLinkTo] is deprecated please use [resource] instead
+2012-02-20 15:29:47,897 [http-8080-1] WARN  util.GrailsUtil  - [DEPRECATED] Tag [createLinkTo] is deprecated please use [resource] instead
+2012-02-20 15:30:00,002 [quartzScheduler_Worker-4] INFO  siteops.PollerJob  - starting poller job at Mon Feb 20 15:30:00 CET 2012
+2012-02-20 15:32:27,327 [Thread-31] INFO  core.QuartzScheduler  - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2012-02-20 15:32:27,332 [Thread-31] INFO  core.QuartzScheduler  - Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
+2012-02-20 15:32:27,332 [Thread-31] INFO  core.QuartzScheduler  - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2012-02-20 15:32:27,333 [Thread-31] INFO  core.QuartzScheduler  - Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
+2012-02-20 15:32:41,341 [main] INFO  http11.Http11Protocol  - Initializing Coyote HTTP/1.1 on http-8080
+2012-02-20 15:32:41,343 [main] INFO  core.StandardService  - Starting service Tomcat
+2012-02-20 15:32:41,345 [main] INFO  core.StandardEngine  - Starting Servlet Engine: Apache Tomcat/6.0-snapshot
+2012-02-20 15:32:41,486 [main] INFO  startup.ContextConfig  - No default web.xml
+2012-02-20 15:32:41,690 [main] INFO  digester.Digester  - TLD skipped. URI: http://www.springframework.org/tags is already defined
+2012-02-20 15:32:41,739 [main] INFO  digester.Digester  - TLD skipped. URI: http://java.sun.com/jsp/jstl/core is already defined
+2012-02-20 15:32:41,770 [main] INFO  digester.Digester  - TLD skipped. URI: http://java.sun.com/jsp/jstl/fmt is already defined
+2012-02-20 15:32:41,868 [main] INFO  [localhost].[/nslb]  - Initializing Spring root WebApplicationContext
+2012-02-20 15:32:43,004 [main] INFO  spring.BeanBuilder  - [RuntimeConfiguration] Configuring data source for environment: DEVELOPMENT
+2012-02-20 15:32:44,406 [main] WARN  config.ConfigurationFactory  - No configuration found. Configuring ehcache from ehcache-failsafe.xml  found in the classpath: jar:file:/Users/jcolby/.ivy2/cache/net.sf.ehcache/ehcache-core/jars/ehcache-core-1.7.1.jar!/ehcache-failsafe.xml
+2012-02-20 15:32:45,071 [main] INFO  core.SchedulerSignalerImpl  - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2012-02-20 15:32:45,072 [main] INFO  core.QuartzScheduler  - Quartz Scheduler v.1.7.3 created.
+2012-02-20 15:32:45,074 [main] INFO  simpl.RAMJobStore  - RAMJobStore initialized.
+2012-02-20 15:32:45,074 [main] INFO  impl.StdSchedulerFactory  - Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2012-02-20 15:32:45,074 [main] INFO  impl.StdSchedulerFactory  - Quartz scheduler version: 1.7.3
+2012-02-20 15:32:45,074 [main] INFO  core.QuartzScheduler  - JobFactory set to: org.codehaus.groovy.grails.plugins.quartz.GrailsJobFactory@105d7554
+2012-02-20 15:32:45,699 [main] INFO  scaffolding.DefaultGrailsTemplateGenerator  - Scaffolding template generator set to use resource loader org.codehaus.groovy.grails.commons.spring.GrailsWebApplicationContext@321a30a0: startup date [Mon Feb 20 15:32:43 CET 2012]; parent: Root WebApplicationContext
+2012-02-20 15:32:45,865 [Timer-0] INFO  utils.UpdateChecker  - New update(s) found: 1.8.5 [http://www.terracotta.org/kit/reflector?kitID=default&pageID=QuartzChangeLog]
+2012-02-20 15:32:46,807 [main] INFO  context.GrailsConfigUtils  - [GrailsContextLoader] Grails application loaded.
+2012-02-20 15:32:46,839 [main] INFO  core.QuartzScheduler  - Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2012-02-20 15:32:47,468 [main] INFO  [localhost].[/nslb]  - Initializing Spring FrameworkServlet 'grails'
+2012-02-20 15:32:47,563 [main] INFO  http11.Http11Protocol  - Starting Coyote HTTP/1.1 on http-8080
+2012-02-20 15:32:55,411 [quartzScheduler_Worker-1] INFO  siteops.PollerJob  - starting poller job at Mon Feb 20 15:32:55 CET 2012
+2012-02-20 15:33:55,393 [quartzScheduler_Worker-2] INFO  siteops.PollerJob  - starting poller job at Mon Feb 20 15:33:55 CET 2012
+2012-02-20 15:35:00,002 [quartzScheduler_Worker-3] INFO  siteops.PollerJob  - starting poller job at Mon Feb 20 15:35:00 CET 2012
+2012-02-20 15:38:20,377 [http-8080-1] INFO  siteops.ActionController  - 127.0.0.1 "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.6; rv:8.0.1) Gecko/20100101 Firefox/8.0.1" /nslb/service/out/replyts47-2 message: 8080_replyts47-2 state is OUT OF SERVICE<br>
+25_replyts47-2 state is OUT OF SERVICE<br>
+
+2012-02-20 15:40:07,757 [quartzScheduler_Worker-4] INFO  siteops.PollerJob  - starting poller job at Mon Feb 20 15:40:07 CET 2012
+2012-02-20 15:40:49,532 [http-8080-1] INFO  siteops.ActionController  - 127.0.0.1 "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.6; rv:8.0.1) Gecko/20100101 Firefox/8.0.1" /nslb/service/in/replyts47-2 message: 8080_replyts47-2 state is UP<br>
+25_replyts47-2 state is UP<br>
+
+2012-02-20 15:41:00,002 [quartzScheduler_Worker-5] INFO  siteops.PollerJob  - starting poller job at Mon Feb 20 15:41:00 CET 2012
+2012-02-20 15:41:32,735 [quartzScheduler_Worker-6] INFO  siteops.PollerJob  - starting poller job at Mon Feb 20 15:41:32 CET 2012

@@ -19,6 +19,7 @@ class UrlMappings {
           controller = "action"
           action = [GET:"showServiceState"]
      }
+
     "/service/port/$service?"{
           controller = "action"
           action = [GET:"port"]

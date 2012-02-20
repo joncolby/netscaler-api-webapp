@@ -31,7 +31,20 @@ class ActionController {
     }
 
     def showServiceState = {
-        def netscalerServices = nitroService.getServicesByHostPattern(params?.service)  ?:  NetscalerService.list()
+        def netscalerServices
+
+        if (params.service) {
+            netscalerServices = nitroService.getServicesByHostPattern(params?.service)
+
+            if (!netscalerServices) {
+                render "no service found for ${params.service}"
+                return
+            }
+
+        } else {
+            netscalerServices = NetscalerService.list()
+        }
+
         render(view: "service", model: [services: netscalerServices])
     }
 
