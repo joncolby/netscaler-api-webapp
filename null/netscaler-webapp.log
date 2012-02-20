@@ -67,3 +67,9 @@
 
 2012-02-20 15:41:00,002 [quartzScheduler_Worker-5] INFO  siteops.PollerJob  - starting poller job at Mon Feb 20 15:41:00 CET 2012
 2012-02-20 15:41:32,735 [quartzScheduler_Worker-6] INFO  siteops.PollerJob  - starting poller job at Mon Feb 20 15:41:32 CET 2012
+2012-02-20 15:42:00,386 [quartzScheduler_Worker-7] INFO  siteops.PollerJob  - starting poller job at Mon Feb 20 15:42:00 CET 2012
+2012-02-20 15:42:32,734 [quartzScheduler_Worker-8] INFO  siteops.PollerJob  - starting poller job at Mon Feb 20 15:42:32 CET 2012
+2012-02-20 15:43:30,856 [Thread-31] INFO  core.QuartzScheduler  - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2012-02-20 15:43:30,858 [Thread-31] INFO  core.QuartzScheduler  - Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
+2012-02-20 15:43:30,858 [Thread-31] INFO  core.QuartzScheduler  - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2012-02-20 15:43:30,859 [Thread-31] INFO  core.QuartzScheduler  - Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
