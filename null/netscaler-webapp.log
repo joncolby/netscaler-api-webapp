@@ -73,3 +73,154 @@
 2012-02-20 15:43:30,858 [Thread-31] INFO  core.QuartzScheduler  - Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
 2012-02-20 15:43:30,858 [Thread-31] INFO  core.QuartzScheduler  - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
 2012-02-20 15:43:30,859 [Thread-31] INFO  core.QuartzScheduler  - Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
+2012-02-21 11:49:09,378 [main] INFO  http11.Http11Protocol  - Initializing Coyote HTTP/1.1 on http-8080
+2012-02-21 11:49:09,397 [main] INFO  core.StandardService  - Starting service Tomcat
+2012-02-21 11:49:09,399 [main] INFO  core.StandardEngine  - Starting Servlet Engine: Apache Tomcat/6.0-snapshot
+2012-02-21 11:49:09,809 [main] INFO  startup.ContextConfig  - No default web.xml
+2012-02-21 11:49:10,253 [main] INFO  digester.Digester  - TLD skipped. URI: http://www.springframework.org/tags is already defined
+2012-02-21 11:49:10,306 [main] INFO  digester.Digester  - TLD skipped. URI: http://java.sun.com/jsp/jstl/core is already defined
+2012-02-21 11:49:10,331 [main] INFO  digester.Digester  - TLD skipped. URI: http://java.sun.com/jsp/jstl/fmt is already defined
+2012-02-21 11:49:10,499 [main] INFO  [localhost].[/nslb]  - Initializing Spring root WebApplicationContext
+2012-02-21 11:49:12,120 [main] INFO  spring.BeanBuilder  - [RuntimeConfiguration] Configuring data source for environment: DEVELOPMENT
+2012-02-21 11:49:15,233 [main] WARN  config.ConfigurationFactory  - No configuration found. Configuring ehcache from ehcache-failsafe.xml  found in the classpath: jar:file:/Users/jcolby/.ivy2/cache/net.sf.ehcache/ehcache-core/jars/ehcache-core-1.7.1.jar!/ehcache-failsafe.xml
+2012-02-21 11:49:16,273 [main] INFO  core.SchedulerSignalerImpl  - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2012-02-21 11:49:16,274 [main] INFO  core.QuartzScheduler  - Quartz Scheduler v.1.7.3 created.
+2012-02-21 11:49:16,276 [main] INFO  simpl.RAMJobStore  - RAMJobStore initialized.
+2012-02-21 11:49:16,276 [main] INFO  impl.StdSchedulerFactory  - Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2012-02-21 11:49:16,276 [main] INFO  impl.StdSchedulerFactory  - Quartz scheduler version: 1.7.3
+2012-02-21 11:49:16,277 [main] INFO  core.QuartzScheduler  - JobFactory set to: org.codehaus.groovy.grails.plugins.quartz.GrailsJobFactory@53533ff4
+2012-02-21 11:49:17,024 [main] INFO  scaffolding.DefaultGrailsTemplateGenerator  - Scaffolding template generator set to use resource loader org.codehaus.groovy.grails.commons.spring.GrailsWebApplicationContext@24de1f47: startup date [Tue Feb 21 11:49:13 CET 2012]; parent: Root WebApplicationContext
+2012-02-21 11:49:18,281 [main] INFO  context.GrailsConfigUtils  - [GrailsContextLoader] Grails application loaded.
+2012-02-21 11:49:18,352 [main] INFO  core.QuartzScheduler  - Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2012-02-21 11:49:19,201 [main] INFO  [localhost].[/nslb]  - Initializing Spring FrameworkServlet 'grails'
+2012-02-21 11:49:19,316 [main] INFO  http11.Http11Protocol  - Starting Coyote HTTP/1.1 on http-8080
+2012-02-21 11:49:20,280 [http-8080-1] WARN  util.GrailsUtil  - [DEPRECATED] Tag [createLinkTo] is deprecated please use [resource] instead
+2012-02-21 11:49:20,441 [Timer-0] INFO  utils.UpdateChecker  - New update(s) found: 1.8.5 [http://www.terracotta.org/kit/reflector?kitID=default&pageID=QuartzChangeLog]
+2012-02-21 11:49:26,569 [quartzScheduler_Worker-1] INFO  siteops.PollerJob  - starting poller job at Tue Feb 21 11:49:26 CET 2012
+2012-02-21 11:50:04,150 [quartzScheduler_Worker-2] INFO  siteops.PollerJob  - starting poller job at Tue Feb 21 11:50:04 CET 2012
+2012-02-21 11:50:41,505 [quartzScheduler_Worker-3] INFO  siteops.PollerJob  - starting poller job at Tue Feb 21 11:50:41 CET 2012
+2012-02-21 11:50:53,428 [http-8080-1] INFO  siteops.ActionController  - 127.0.0.1 "curl/7.21.1 (x86_64-apple-darwin10.4.0) libcurl/7.21.1 OpenSSL/1.0.0a zlib/1.2.5 libidn/1.19" /nslb/service/in/replyts46-1 message: 8080_replyts46-1 state is UP<br>
+25_replyts46-1 state is UP<br>
+
+2012-02-21 11:51:13,898 [http-8080-1] INFO  siteops.ActionController  - 127.0.0.1 "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.6; rv:8.0.1) Gecko/20100101 Firefox/8.0.1" /nslb/service/in/replyts46-1 message: 8080_replyts46-1 state is UP<br>
+25_replyts46-1 state is UP<br>
+
+2012-02-21 11:51:31,284 [http-8080-1] INFO  siteops.ActionController  - 127.0.0.1 "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.6; rv:8.0.1) Gecko/20100101 Firefox/8.0.1" /nslb/service/in/replyts46-1 message: 8080_replyts46-1 state is UP<br>
+25_replyts46-1 state is UP<br>
+
+2012-02-21 11:51:35,567 [http-8080-1] INFO  siteops.ActionController  - 127.0.0.1 "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.6; rv:8.0.1) Gecko/20100101 Firefox/8.0.1" /nslb/service/in/replyts46-1 message: 8080_replyts46-1 state is UP<br>
+25_replyts46-1 state is UP<br>
+
+2012-02-21 11:51:48,003 [http-8080-1] INFO  siteops.ActionController  - 127.0.0.1 "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.6; rv:8.0.1) Gecko/20100101 Firefox/8.0.1" /nslb/service/in/replyts46-1 message: 8080_replyts46-1 state is UP<br>
+25_replyts46-1 state is UP<br>
+
+2012-02-21 11:51:52,290 [http-8080-1] INFO  siteops.ActionController  - 127.0.0.1 "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.6; rv:8.0.1) Gecko/20100101 Firefox/8.0.1" /nslb/service/in/replyts46-1 message: 8080_replyts46-1 state is UP<br>
+25_replyts46-1 state is UP<br>
+
+2012-02-21 11:51:53,846 [Thread-31] INFO  core.QuartzScheduler  - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2012-02-21 11:51:53,877 [Thread-31] INFO  core.QuartzScheduler  - Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
+2012-02-21 11:51:53,877 [Thread-31] INFO  core.QuartzScheduler  - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2012-02-21 11:51:53,878 [Thread-31] INFO  core.QuartzScheduler  - Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
+2012-02-21 11:52:40,630 [main] INFO  http11.Http11Protocol  - Initializing Coyote HTTP/1.1 on http-8080
+2012-02-21 11:52:40,631 [main] INFO  core.StandardService  - Starting service Tomcat
+2012-02-21 11:52:40,632 [main] INFO  core.StandardEngine  - Starting Servlet Engine: Apache Tomcat/6.0-snapshot
+2012-02-21 11:52:40,772 [main] INFO  startup.ContextConfig  - No default web.xml
+2012-02-21 11:52:40,974 [main] INFO  digester.Digester  - TLD skipped. URI: http://www.springframework.org/tags is already defined
+2012-02-21 11:52:41,017 [main] INFO  digester.Digester  - TLD skipped. URI: http://java.sun.com/jsp/jstl/core is already defined
+2012-02-21 11:52:41,044 [main] INFO  digester.Digester  - TLD skipped. URI: http://java.sun.com/jsp/jstl/fmt is already defined
+2012-02-21 11:52:41,124 [main] INFO  [localhost].[/nslb]  - Initializing Spring root WebApplicationContext
+2012-02-21 11:52:42,216 [main] INFO  spring.BeanBuilder  - [RuntimeConfiguration] Configuring data source for environment: DEVELOPMENT
+2012-02-21 11:52:43,658 [main] WARN  config.ConfigurationFactory  - No configuration found. Configuring ehcache from ehcache-failsafe.xml  found in the classpath: jar:file:/Users/jcolby/.ivy2/cache/net.sf.ehcache/ehcache-core/jars/ehcache-core-1.7.1.jar!/ehcache-failsafe.xml
+2012-02-21 11:52:44,332 [main] INFO  core.SchedulerSignalerImpl  - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2012-02-21 11:52:44,333 [main] INFO  core.QuartzScheduler  - Quartz Scheduler v.1.7.3 created.
+2012-02-21 11:52:44,335 [main] INFO  simpl.RAMJobStore  - RAMJobStore initialized.
+2012-02-21 11:52:44,335 [main] INFO  impl.StdSchedulerFactory  - Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2012-02-21 11:52:44,335 [main] INFO  impl.StdSchedulerFactory  - Quartz scheduler version: 1.7.3
+2012-02-21 11:52:44,335 [main] INFO  core.QuartzScheduler  - JobFactory set to: org.codehaus.groovy.grails.plugins.quartz.GrailsJobFactory@5c8163c6
+2012-02-21 11:52:44,843 [main] INFO  scaffolding.DefaultGrailsTemplateGenerator  - Scaffolding template generator set to use resource loader org.codehaus.groovy.grails.commons.spring.GrailsWebApplicationContext@612fcbd8: startup date [Tue Feb 21 11:52:42 CET 2012]; parent: Root WebApplicationContext
+2012-02-21 11:52:45,106 [Timer-0] INFO  utils.UpdateChecker  - New update(s) found: 1.8.5 [http://www.terracotta.org/kit/reflector?kitID=default&pageID=QuartzChangeLog]
+2012-02-21 11:52:46,101 [main] INFO  context.GrailsConfigUtils  - [GrailsContextLoader] Grails application loaded.
+2012-02-21 11:52:46,134 [main] INFO  core.QuartzScheduler  - Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2012-02-21 11:52:47,257 [main] INFO  [localhost].[/nslb]  - Initializing Spring FrameworkServlet 'grails'
+2012-02-21 11:52:47,356 [main] INFO  http11.Http11Protocol  - Starting Coyote HTTP/1.1 on http-8080
+2012-02-21 11:52:48,195 [http-8080-1] WARN  util.GrailsUtil  - [DEPRECATED] Tag [createLinkTo] is deprecated please use [resource] instead
+2012-02-21 11:52:54,596 [quartzScheduler_Worker-1] INFO  siteops.PollerJob  - starting poller job at Tue Feb 21 11:52:54 CET 2012
+2012-02-21 11:53:02,907 [http-8080-1] INFO  siteops.ActionController  - 127.0.0.1 "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.6; rv:8.0.1) Gecko/20100101 Firefox/8.0.1" /nslb/service/in/replyts46-1 message: no services found for replyts46-1
+2012-02-21 11:53:02,999 [http-8080-1] ERROR errors.GrailsExceptionResolver  - Exception occurred when processing request: [GET] /nslb/service/in/replyts46-1
+Stacktrace follows:
+groovy.lang.MissingPropertyException: No such property: result for class: de.mobile.siteops.ActionController
+Possible solutions: request
+	at de.mobile.siteops.ActionController$_closure3.doCall(ActionController.groovy:25)
+	at de.mobile.siteops.ActionController$_closure3.doCall(ActionController.groovy)
+	at de.mobile.siteops.ActionController$_closure4.doCall(ActionController.groovy:34)
+	at de.mobile.siteops.ActionController$_closure4.doCall(ActionController.groovy)
+	at java.lang.Thread.run(Thread.java:680)
+2012-02-21 11:53:54,588 [quartzScheduler_Worker-2] INFO  siteops.PollerJob  - starting poller job at Tue Feb 21 11:53:54 CET 2012
+2012-02-21 11:54:32,005 [quartzScheduler_Worker-3] INFO  siteops.PollerJob  - starting poller job at Tue Feb 21 11:54:32 CET 2012
+2012-02-21 11:54:51,724 [http-8080-1] INFO  siteops.ActionController  - 127.0.0.1 "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.6; rv:8.0.1) Gecko/20100101 Firefox/8.0.1" /nslb/service/in/replyts46-1 message: 8080_replyts46-1 state is UP<br>
+25_replyts46-1 state is UP<br>
+
+2012-02-21 11:55:07,049 [http-8080-1] INFO  siteops.ActionController  - 127.0.0.1 "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.6; rv:8.0.1) Gecko/20100101 Firefox/8.0.1" /nslb/service/out/replyts46-1 message: 8080_replyts46-1 state is OUT OF SERVICE<br>
+25_replyts46-1 state is OUT OF SERVICE<br>
+
+2012-02-21 11:55:31,086 [http-8080-1] INFO  siteops.ActionController  - 127.0.0.1 "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.6; rv:8.0.1) Gecko/20100101 Firefox/8.0.1" /nslb/service/in/replyts46-1 message: 8080_replyts46-1 state is UP<br>
+25_replyts46-1 state is UP<br>
+
+2012-02-21 11:56:00,002 [quartzScheduler_Worker-4] INFO  siteops.PollerJob  - starting poller job at Tue Feb 21 11:56:00 CET 2012
+2012-02-21 11:56:38,501 [http-8080-1] INFO  siteops.ActionController  - 127.0.0.1 "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.6; rv:8.0.1) Gecko/20100101 Firefox/8.0.1" /nslb/service/in/replyts46-1 message: 8080_replyts46-1 state is UP<br>
+25_replyts46-1 state is UP<br>
+
+2012-02-21 11:57:47,091 [http-8080-1] INFO  siteops.ActionController  - 127.0.0.1 "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.6; rv:8.0.1) Gecko/20100101 Firefox/8.0.1" /nslb/service/in/replyts46-1 message: 8080_replyts46-1 state is UP<br>
+25_replyts46-1 state is UP<br>
+
+2012-02-21 11:58:00,003 [quartzScheduler_Worker-5] INFO  siteops.PollerJob  - starting poller job at Tue Feb 21 11:58:00 CET 2012
+2012-02-21 11:58:11,751 [http-8080-1] INFO  siteops.ActionController  - 127.0.0.1 "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.6; rv:8.0.1) Gecko/20100101 Firefox/8.0.1" /nslb/service/in/replyts46-1 message: 8080_replyts46-1 state is UP<br>
+25_replyts46-1 state is UP<br>
+
+2012-02-21 11:59:38,441 [http-8080-1] INFO  siteops.ActionController  - 127.0.0.1 "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.6; rv:8.0.1) Gecko/20100101 Firefox/8.0.1" /nslb/service/in/replyts46-1 message: 8080_replyts46-1 state is UP<br>
+25_replyts46-1 state is UP<br>
+
+2012-02-21 12:00:00,003 [quartzScheduler_Worker-6] INFO  siteops.PollerJob  - starting poller job at Tue Feb 21 12:00:00 CET 2012
+2012-02-21 12:00:38,133 [http-8080-1] INFO  siteops.ActionController  - 127.0.0.1 "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.6; rv:8.0.1) Gecko/20100101 Firefox/8.0.1" /nslb/service/in/replyts46-1 message: 8080_replyts46-1 state is UP<br>
+25_replyts46-1 state is UP<br>
+
+2012-02-21 12:00:46,313 [http-8080-1] ERROR errors.GrailsExceptionResolver  - Exception occurred when processing request: [GET] /nslb/service/read/replyts46-1
+Stacktrace follows:
+groovy.lang.MissingMethodException: No signature of method: de.mobile.siteops.ActionController.render() is applicable for argument types: (null) values: [null]
+Possible solutions: render(java.lang.String), render(org.codehaus.groovy.grails.web.converters.Converter), render(groovy.lang.Closure), render(java.util.Map), render(java.lang.Object), render(java.util.Map, groovy.lang.Closure)
+	at de.mobile.siteops.ActionController$_closure5.doCall(ActionController.groovy:40)
+	at de.mobile.siteops.ActionController$_closure5.doCall(ActionController.groovy)
+	at java.lang.Thread.run(Thread.java:680)
+2012-02-21 12:00:48,350 [http-8080-1] ERROR errors.GrailsExceptionResolver  - Exception occurred when processing request: [GET] /nslb/service/read/replyts46-1
+Stacktrace follows:
+groovy.lang.MissingMethodException: No signature of method: de.mobile.siteops.ActionController.render() is applicable for argument types: (null) values: [null]
+Possible solutions: render(java.lang.String), render(org.codehaus.groovy.grails.web.converters.Converter), render(groovy.lang.Closure), render(java.util.Map), render(java.lang.Object), render(java.util.Map, groovy.lang.Closure)
+	at de.mobile.siteops.ActionController$_closure5.doCall(ActionController.groovy:40)
+	at de.mobile.siteops.ActionController$_closure5.doCall(ActionController.groovy)
+	at java.lang.Thread.run(Thread.java:680)
+2012-02-21 12:02:00,003 [quartzScheduler_Worker-7] INFO  siteops.PollerJob  - starting poller job at Tue Feb 21 12:02:00 CET 2012
+2012-02-21 12:03:44,624 [http-8080-1] INFO  siteops.ActionController  - 127.0.0.1 "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.6; rv:8.0.1) Gecko/20100101 Firefox/8.0.1" /nslb/service/in/replyts46-1 message: [response:8080_replyts46-1 state is UP<br>
+25_replyts46-1 state is UP<br>
+, error:]
+2012-02-21 12:04:00,003 [quartzScheduler_Worker-8] INFO  siteops.PollerJob  - starting poller job at Tue Feb 21 12:04:00 CET 2012
+2012-02-21 12:04:35,351 [http-8080-1] INFO  siteops.ActionController  - 127.0.0.1 "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.6; rv:8.0.1) Gecko/20100101 Firefox/8.0.1" /nslb/service/in/replyts46-1 message: [response:8080_replyts46-1 state is UP<br>
+25_replyts46-1 state is UP<br>
+, error:]
+2012-02-21 12:04:56,693 [http-8080-1] INFO  siteops.ActionController  - 127.0.0.1 "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.6; rv:8.0.1) Gecko/20100101 Firefox/8.0.1" /nslb/service/in/replyts46-1 message: [response:8080_replyts46-1 state is UP<br>
+25_replyts46-1 state is UP<br>
+, error:]
+2012-02-21 12:06:00,006 [quartzScheduler_Worker-9] INFO  siteops.PollerJob  - starting poller job at Tue Feb 21 12:06:00 CET 2012
+2012-02-21 12:07:24,743 [http-8080-1] INFO  siteops.ActionController  - 127.0.0.1 "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.6; rv:8.0.1) Gecko/20100101 Firefox/8.0.1" /nslb/service/in/replyts46-1 message: [response:8080_replyts46-1 state is UP<br>
+25_replyts46-1 state is UP<br>
+, error:]
+2012-02-21 12:08:00,005 [quartzScheduler_Worker-10] INFO  siteops.PollerJob  - starting poller job at Tue Feb 21 12:08:00 CET 2012
+2012-02-21 12:08:11,824 [http-8080-1] INFO  siteops.ActionController  - 127.0.0.1 "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.6; rv:8.0.1) Gecko/20100101 Firefox/8.0.1" /nslb/service/in/replyts46-1 message: [response:8080_replyts46-1 state is UP<br>
+25_replyts46-1 state is UP<br>
+, error:]
+2012-02-21 12:08:22,283 [http-8080-1] INFO  siteops.ActionController  - 127.0.0.1 "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.6; rv:8.0.1) Gecko/20100101 Firefox/8.0.1" /nslb/service/in/replyts46-1 message: [response:8080_replyts46-1 state is UP<br>
+25_replyts46-1 state is UP<br>
+, error:]
+2012-02-21 12:08:36,442 [http-8080-1] INFO  siteops.ActionController  - 127.0.0.1 "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.6; rv:8.0.1) Gecko/20100101 Firefox/8.0.1" /nslb/service/in/replyts46-1 message: [response:8080_replyts46-1 state is UP<br>
+25_replyts46-1 state is UP<br>
+, error:cant do that ]
+2012-02-21 12:10:00,004 [quartzScheduler_Worker-1] INFO  siteops.PollerJob  - starting poller job at Tue Feb 21 12:10:00 CET 2012

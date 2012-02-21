@@ -14,20 +14,16 @@ class ActionController {
         render ports.join(',')
     }
 
-    def complete = {
-        if (flash.message) {
-            render flash.message
-        } else {
-            render "no action performed"
-        }
-    }
 
     def changeServiceState = {
         def result = nitroService.changeServiceState(params.service,params.operation)
-        //render(text: "${result}", contentType: "text/html", encoding: "UTF-8")
         log.info clientRequestInfo + " message: " + result
-        flash.message = result
-		redirect(action:complete)
+
+        if (result.error) {
+            render result.error
+            return
+        }
+        redirect(uri: "/service/read/${params.service}")
     }
 
     def showServiceState = {

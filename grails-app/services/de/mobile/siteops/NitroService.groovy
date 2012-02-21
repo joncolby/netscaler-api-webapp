@@ -190,6 +190,7 @@ class NitroService {
 
         println "found services: " + netscalerServices
         def response = ""
+        def error = ""
         def command
         def state
         netscalerServices.each { NetscalerService s ->
@@ -208,7 +209,8 @@ class NitroService {
                         state = "OUT OF SERVICE"
                         break
                     default:
-                        return "unrecognized action $action"
+                        error = "unrecognized action $action"
+                        return
                 }
 
             if (result.errorcode == 0) {
@@ -219,14 +221,12 @@ class NitroService {
                s.state = state
                s.save()
             } else {
-               response += "problem setting ${s.name} to ${command}: ${result.message}. error ${result.errorcode}<br>\n"
+               error += "problem setting ${s.name} to ${command}: ${result.message}. error ${result.errorcode}<br>\n"
             }
 
             disconnect()
         }
-
-        return response
-
+        return [response: response, error: error]
     }
 
     def NetscalerService[] getServicesByHostPattern(String hostPattern) {
