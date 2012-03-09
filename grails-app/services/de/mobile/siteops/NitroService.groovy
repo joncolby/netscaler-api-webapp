@@ -177,20 +177,20 @@ class NitroService {
     }
 
     def changeServiceState(String serviceName, String action) {
+        def response = ""
+        def error = ""
 
         if (! serviceName ) {
-            return "missing host or service name"
+            error = "missing host or service name"
         }
-
         def netscalerServices = getServicesByHostPattern(serviceName)
 
         if (! netscalerServices ) {
-            return "no services found for ${serviceName}"
+            error = "no services found for ${serviceName}"
         }
 
-        println "found services: " + netscalerServices
-        def response = ""
-        def error = ""
+        log.debug "found services: " + netscalerServices
+
         def command
         def state
         netscalerServices.each { NetscalerService s ->
