@@ -1,0 +1,5 @@
+
+java security directories ...
+
+ON LINUX: /opt/java/jre/lib/security/
+ON MAC: /Library/Java/Home/lib/security/
