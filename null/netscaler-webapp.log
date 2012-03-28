@@ -1,0 +1,28 @@
+2012-03-28 14:29:23,423 [main] INFO  spring.BeanBuilder  - [RuntimeConfiguration] Configuring data source for environment: DEVELOPMENT
+2012-03-28 14:29:25,045 [main] WARN  config.ConfigurationFactory  - No configuration found. Configuring ehcache from ehcache-failsafe.xml  found in the classpath: jar:file:/Users/jcolby/.ivy2/cache/net.sf.ehcache/ehcache-core/jars/ehcache-core-1.7.1.jar!/ehcache-failsafe.xml
+2012-03-28 14:29:25,831 [main] INFO  core.SchedulerSignalerImpl  - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2012-03-28 14:29:25,832 [main] INFO  core.QuartzScheduler  - Quartz Scheduler v.1.7.3 created.
+2012-03-28 14:29:25,833 [main] INFO  simpl.RAMJobStore  - RAMJobStore initialized.
+2012-03-28 14:29:25,833 [main] INFO  impl.StdSchedulerFactory  - Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2012-03-28 14:29:25,833 [main] INFO  impl.StdSchedulerFactory  - Quartz scheduler version: 1.7.3
+2012-03-28 14:29:25,834 [main] INFO  core.QuartzScheduler  - JobFactory set to: org.codehaus.groovy.grails.plugins.quartz.GrailsJobFactory@471be6b9
+2012-03-28 14:29:26,641 [main] INFO  scaffolding.DefaultGrailsTemplateGenerator  - Scaffolding template generator set to use resource loader org.codehaus.groovy.grails.commons.spring.GrailsWebApplicationContext@434e54d8: startup date [Wed Mar 28 14:29:24 CEST 2012]; parent: org.codehaus.groovy.grails.commons.spring.GrailsWebApplicationContext@5b9a82ee
+2012-03-28 14:29:26,664 [Timer-0] INFO  utils.UpdateChecker  - New update(s) found: 1.8.5 [http://www.terracotta.org/kit/reflector?kitID=default&pageID=QuartzChangeLog]
+2012-03-28 14:29:27,939 [Thread-43] INFO  core.QuartzScheduler  - Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
+2012-03-28 14:29:27,939 [Thread-43] INFO  core.QuartzScheduler  - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2012-03-28 14:29:27,942 [Thread-43] INFO  core.QuartzScheduler  - Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
+2012-03-28 14:35:21,589 [main] INFO  scaffolding.DefaultGrailsTemplateGenerator  - Generating create view for domain class [de.mobile.siteops.NetscalerAppliance]
+2012-03-28 14:35:22,093 [main] INFO  scaffolding.DefaultGrailsTemplateGenerator  - Generating edit view for domain class [de.mobile.siteops.NetscalerAppliance]
+2012-03-28 14:35:22,195 [main] INFO  scaffolding.DefaultGrailsTemplateGenerator  - Generating list view for domain class [de.mobile.siteops.NetscalerAppliance]
+2012-03-28 14:35:22,335 [main] INFO  scaffolding.DefaultGrailsTemplateGenerator  - Generating show view for domain class [de.mobile.siteops.NetscalerAppliance]
+2012-03-28 14:35:22,505 [main] INFO  scaffolding.DefaultGrailsTemplateGenerator  - Controller generated at /Users/jcolby/projects/netscaler-api-webapp/grails-app/controllers/de/mobile/siteops/NetscalerApplianceController.groovy
+2012-03-28 14:36:01,407 [main] INFO  scaffolding.DefaultGrailsTemplateGenerator  - Generating create view for domain class [de.mobile.siteops.NetscalerLbvserver]
+2012-03-28 14:36:01,730 [main] INFO  scaffolding.DefaultGrailsTemplateGenerator  - Generating edit view for domain class [de.mobile.siteops.NetscalerLbvserver]
+2012-03-28 14:36:01,818 [main] INFO  scaffolding.DefaultGrailsTemplateGenerator  - Generating list view for domain class [de.mobile.siteops.NetscalerLbvserver]
+2012-03-28 14:36:01,905 [main] INFO  scaffolding.DefaultGrailsTemplateGenerator  - Generating show view for domain class [de.mobile.siteops.NetscalerLbvserver]
+2012-03-28 14:36:02,060 [main] INFO  scaffolding.DefaultGrailsTemplateGenerator  - Controller generated at /Users/jcolby/projects/netscaler-api-webapp/grails-app/controllers/de/mobile/siteops/NetscalerLbvserverController.groovy
+2012-03-28 14:36:18,654 [main] INFO  scaffolding.DefaultGrailsTemplateGenerator  - Generating create view for domain class [de.mobile.siteops.NetscalerService]
+2012-03-28 14:36:18,972 [main] INFO  scaffolding.DefaultGrailsTemplateGenerator  - Generating edit view for domain class [de.mobile.siteops.NetscalerService]
+2012-03-28 14:36:19,059 [main] INFO  scaffolding.DefaultGrailsTemplateGenerator  - Generating list view for domain class [de.mobile.siteops.NetscalerService]
+2012-03-28 14:36:19,173 [main] INFO  scaffolding.DefaultGrailsTemplateGenerator  - Generating show view for domain class [de.mobile.siteops.NetscalerService]
+2012-03-28 14:36:19,349 [main] INFO  scaffolding.DefaultGrailsTemplateGenerator  - Controller generated at /Users/jcolby/projects/netscaler-api-webapp/grails-app/controllers/de/mobile/siteops/NetscalerServiceController.groovy
