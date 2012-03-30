@@ -8,7 +8,8 @@
         <h1 style="margin-left:20px;">Netscaler REST API Help</h1>
         <p style="margin-left:20px;width:80%">Functions are available for an <b>lbvserver</b> and a <b>service</b>.<BR/>
         An <b>lbvserver</b> is the "virtual service" name.<BR/>
-        A <b>service</b> is usually a particular host that is bound to the lbvserver.
+        A <b>service</b> is usually a particular host that is bound to the lbvserver. <BR/>
+        <b>** Note disabling of services is performed gracefully with a default delay of 1000 seconds **</b>
         </p>
         <div class="dialog" style="margin-left:20px;width:60%;">
 
@@ -75,10 +76,16 @@
         <td>${context}service/in/<b>anyserver99-9</b></td>
         </tr>
 
-         <tr>
+        <tr>
         <td>Take service (host) OUT OF SERVICE</td>
         <td>${context}service/out/<b>hostname</b> | <b>servicename</b></td>
         <td>${context}service/out/<b>anyserver99-9</b></td>
+        </tr>
+
+        <tr>
+        <td>List all configured services</td>
+        <td><a href="<g:createLink controller="service" action="list" />"><g:createLink action="list" controller="service" /></a> [?datacenter=]</td>
+        <td><a href="<g:createLink controller="service" action="list" />"><g:createLink action="list" controller="service" /></a></td>
         </tr>
 
         </table>

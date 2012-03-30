@@ -196,15 +196,23 @@ class NitroService {
         netscalerServices.each { NetscalerService s ->
                   def client = connect(s.lbvserver.netscaler)
                   def result
+                  def basicService  = new com.citrix.netscaler.nitro.resource.config.basic.service()
+                  def service = basicService.get(client,s.name)
 
                 switch (action) {
                     case "in":
-                        result = service.enable(client, s.name)
+                        // with service string parameter
+                        //result = service.enable(client, s.name)
+                        result = service.enable(client, service)
                         command = "enable"
                         state = "UP"
                         break
                     case "out":
-                        result = service.disable(client, s.name)
+                        // with service string parameter
+                        //result = service.disable(client, s.name)
+                        service.set_graceful("YES")
+                        service.set_delay(1000)
+                        result = service.disable(client, service)
                         command = "disable"
                         state = "OUT OF SERVICE"
                         break

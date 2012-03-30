@@ -25,6 +25,11 @@ class UrlMappings {
           action = [GET:"port"]
      }
 
+     "/service/list"{
+          controller = "action"
+          action = [GET:"listServices"]
+     }
+
      "/lbvserver/list/$lbvserver?"{
           controller = "action"
           action = [GET:"showLbvservers"]

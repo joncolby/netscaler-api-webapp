@@ -44,6 +44,24 @@ class ActionController {
         render(view: "service", model: [services: netscalerServices])
     }
 
+    def listServices = {
+        def servicesList = []
+
+        if (params.datacenter) {
+            servicesList = NetscalerService.findAllByDataCenter(params.datacenter)
+        } else {
+            servicesList = NetscalerService.findAll()
+        }
+
+        if (! servicesList ) {
+            render "no services available"
+            return
+        }
+
+        render(view: "service", model: [services: servicesList])
+
+    }
+
     def showLbvserverBindings = {
         def netscalerLbvservers
 
