@@ -1,5 +1,11 @@
 
-java security directories ...
+To install an ssl certificate into the keystore, run:
 
-ON LINUX: /opt/java/jre/lib/security/
-ON MAC: /Library/Java/Home/lib/security/
+java InstallCert <fully-qualified-domain-name>
+
+It will import the certificate into a new file called jssecerts and copy it to
+
+/opt/java/jre/lib/security/ (LINUX)
+
+On Mac, the cert must be copied to:
+/Library/Java/Home/lib/security/ (MAC)
