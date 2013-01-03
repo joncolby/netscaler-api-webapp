@@ -50,6 +50,11 @@ class UrlMappings {
           action = [GET:"showLbvserverBindings"]
      }
 
+    "/stats/$lbname?"{
+          controller = "loadBalancerStatistic"
+          action = [GET:"stats"]
+      }
+
     // "/"(view:"/index")
     "/"(controller:"action")
     "500"(view:'/error')

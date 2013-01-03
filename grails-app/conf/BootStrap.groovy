@@ -4,12 +4,6 @@ class BootStrap {
 
     def init = { servletContext ->
 
-        def env = System.getenv()
-        new File(env["HOME"]).eachFileMatch(~".h2.*") { f ->
-            println "deleting h2 file $f"
-            f.delete()
-        }
-
         new NetscalerAppliance(dataCenter: 46, protocol: 'HTTPS', ipAddress: '10.46.28.251', username: 'apiuser', password: 't313F0n', role: 'ACTIVE', managed: true).save()
         new NetscalerAppliance(dataCenter: 46, protocol: 'HTTPS', ipAddress: '10.46.24.151', username: 'apiuser', password: 't313F0n', role: 'ACTIVE', managed: true).save()
         new NetscalerAppliance(dataCenter: 47, protocol: 'HTTPS', ipAddress: '10.47.28.251', username: 'apiuser', password: 't313F0n', role: 'ACTIVE', managed: true).save()
