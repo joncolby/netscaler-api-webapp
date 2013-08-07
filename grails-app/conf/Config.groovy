@@ -66,9 +66,12 @@ environments {
 
 }
 
+def logfile
+if (System.properties.getProperty('logDir'))
+  logfile = System.properties.getProperty('logDir') + '/netscaler-webapp.log'
+else
+  logfile =  "netscaler-webapp.log"
 
-def logPath = System.properties.getProperty('logDir')
-logfile =  "${logPath}/netscaler-webapp.log"
 println "logging to: $logfile"
 
 // log4j configuration
