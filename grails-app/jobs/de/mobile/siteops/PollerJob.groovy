@@ -1,9 +1,12 @@
 package de.mobile.siteops
 
+import org.apache.log4j.Logger
 
 class PollerJob {
     //def timeout = 5000l // execute job once in 5 seconds
     def concurrent = false
+
+    def logger = Logger.getLogger(getClass())
 
     def nitroService
 
@@ -11,12 +14,12 @@ class PollerJob {
     static triggers = {
        //cron name: 'poller', startDelay: 10000, cronExpression: "0 0/60 * * * ?"
        simple name:'init-poller', startDelay:10000, repeatCount: 1
-       cron name: 'poller', startDelay: 10000, cronExpression: "0 0/2 * * * ?"
+       cron name: 'poller', startDelay: 10000, cronExpression: "0 0/3 * * * ?"
     }
 
     def execute() {
         // execute task
-        log.info "starting poller job at " + new Date()
+        logger.info "starting poller job at " + new Date()
 
         def netscalerAppliances = NetscalerAppliance.findAllByManaged(true)
 

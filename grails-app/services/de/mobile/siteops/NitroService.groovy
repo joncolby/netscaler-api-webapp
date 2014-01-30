@@ -1,5 +1,6 @@
 package de.mobile.siteops
 
+import org.apache.log4j.Logger
 import com.google.gson.Gson;
 
 import com.citrix.netscaler.nitro.exception.nitro_exception;
@@ -59,6 +60,8 @@ import com.sun.jndi.ldap.Connection;
 
 class NitroService {
 
+    def logger = Logger.getLogger(getClass())
+
     static transactional = false
 
     private NetscalerClient netscalerClient
@@ -82,9 +85,9 @@ class NitroService {
                     client = new nitro_service(netscalerAppliance.ipAddress,netscalerAppliance.protocol)
                     client.login(netscalerAppliance.username, netscalerAppliance.password)
                 } catch(nitro_exception error){
-                    log.error "NITRO Error -> Code " +error.getErrorCode() +" : " +error.getMessage()
+                    logger.error "NITRO Error -> Code " +error.getErrorCode() +" : " +error.getMessage()
                 } catch(Exception e){
-                    log.error "Java Error -> " + e.getMessage()
+                    logger.error "Java Error -> " + e.getMessage()
                 }
         }
 
@@ -93,9 +96,9 @@ class NitroService {
                     try {
                         client.logout()
                     } catch(nitro_exception error){
-                        log.error "NITRO Error -> Code " +error.getErrorCode() +" : " +error.getMessage()
+                        logger.error "NITRO Error -> Code " +error.getErrorCode() +" : " +error.getMessage()
                     } catch(Exception e){
-                        log.error "Java Error -> " +e.getMessage()
+                        logger.error "Java Error -> " +e.getMessage()
                     } finally {
                         client = null
                     }
@@ -105,7 +108,7 @@ class NitroService {
     }
 
     private def connect(NetscalerAppliance netscalerAppliance) {
-        log.debug "connecting to netscaler " + netscalerAppliance.ipAddress
+        logger.debug "connecting to netscaler " + netscalerAppliance.ipAddress
         NetscalerClient netscalerClient = new NetscalerClient(netscalerAppliance)
         netscalerClient.connect()
         return netscalerClient.client
@@ -121,7 +124,7 @@ class NitroService {
 
     def refreshLbvserverBindings() {
 
-        log.debug "using netscaler " + netscalerAppliance.ipAddress
+        logger.debug "using netscaler " + netscalerAppliance.ipAddress
 
         def client = connect(netscalerAppliance)
         def results = lbvserver.get(client)
@@ -141,8 +144,8 @@ class NitroService {
            }
 
              if ( ! netscalerLbvserver.validate() || ! netscalerLbvserver.save(flush:true) ) {
-                 log.error "COULD NOT SAVE LBVSERVER " + result._name
-                 log.error netscalerLbvserver.errors
+                 logger.error "COULD NOT SAVE LBVSERVER " + result._name
+                 logger.error netscalerLbvserver.errors
              }
 
            // get all the services bound to this lbvserver
@@ -164,8 +167,8 @@ class NitroService {
                    if ( netscalerService.validate() && netscalerService.save() ) {
                         netscalerLbvserver.addToServices(netscalerService)
                    } else {
-                        log.error "could not save service: " + s._servicename
-                        log.error netscalerService.errors
+                        logger.error "could not save service: " + s._servicename
+                        logger.error netscalerService.errors
                    }
                }
 
@@ -189,7 +192,7 @@ class NitroService {
             error = "no services found for ${serviceName}"
         }
 
-        log.debug "found services: " + netscalerServices
+        logger.debug "found services: " + netscalerServices
 
         def command
         def state

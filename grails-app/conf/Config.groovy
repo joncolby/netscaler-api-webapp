@@ -98,6 +98,7 @@ log4j = {
            'net.sf.ehcache.hibernate'
 
     warn   'org.mortbay.log'
+
     root {
 	    info 'netscaler-webapp'
 	    additivity = true

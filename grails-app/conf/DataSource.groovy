@@ -18,15 +18,20 @@ environments {
     development {
         dataSource {
             dbCreate = "create-drop" // one of 'create', 'create-drop','update'
-            //url = "jdbc:hsqldb:mem:devDB"
-            url = "jdbc:h2:file:~/.h2;MODE=MYSQL"
+            //url = "jdbc:h2:mem:devDB;MODE=MYSQL"
+            //url = "jdbc:h2:file:~/.h2;MODE=MYSQL"
+            workdir = System.properties.getProperty('workdir') ?: '/tmp'
+            url = "jdbc:h2:file:" + workdir + "/.h2;MODE=MYSQL"
+
         }
     }
     test {
         dataSource {
             dbCreate = "update"
-            //url = "jdbc:hsqldb:mem:testDb"
-            url = "jdbc:h2:file:~/.h2;MODE=MYSQL"
+            //url = "jdbc:h2:mem:testDb;MODE=MYSQL"
+            //url = "jdbc:h2:file:~/.h2;MODE=MYSQL"
+            workdir = System.properties.getProperty('workdir') ?: '/tmp'
+            url = "jdbc:h2:file:" + workdir + "/.h2;MODE=MYSQL"
         }
     }
     production {
@@ -34,7 +39,10 @@ environments {
             //dbCreate = "update"
             dbCreate = "create-drop" // one of 'create', 'create-drop','update'
             //url = "jdbc:hsqldb:file:prodDb;shutdown=true"
-            url = "jdbc:h2:file:~/.h2;MODE=MYSQL"
+            //url = "jdbc:h2:mem:prodDb;MODE=MYSQL"
+            //url = "jdbc:h2:file:~/.h2;MODE=MYSQL"
+            workdir = System.properties.getProperty('workdir') ?: '/tmp'
+            url = "jdbc:h2:file:" + workdir + "/.h2;MODE=MYSQL"
         }
     }
 }
