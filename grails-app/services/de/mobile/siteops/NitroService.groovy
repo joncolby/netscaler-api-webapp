@@ -64,73 +64,60 @@ class NitroService {
 
     static transactional = false
 
-    private NetscalerClient netscalerClient
-    public NetscalerAppliance netscalerAppliance
+    private NetscalerAppliance netscalerAppliance
 
-    private class NetscalerClient {
+    private connect(NetscalerAppliance netscalerAppliance) {
 
-        private def client
-        private NetscalerAppliance netscalerAppliance
+        this.netscalerAppliance = netscalerAppliance
 
-        public NetscalerClient(NetscalerAppliance netscalerAppliance) {
-            this.netscalerAppliance = netscalerAppliance
+        logger.debug "attempting to connect to netscaler " + netscalerAppliance.ipAddress
+
+        try {
+            def ns_session = new nitro_service(netscalerAppliance.ipAddress,netscalerAppliance.protocol)
+            ns_session.login(netscalerAppliance.username, netscalerAppliance.password)
+            return ns_session
+        } catch(nitro_exception error){
+            logger.error "NITRO Error -> Code " + error.getErrorCode() + " : " + error.getMessage()
+        } catch(Exception e){
+            logger.error "Java Error -> " + e.getMessage()
         }
-
-        public def getClient() {
-            return client
-        }
-
-        public def connect() {
-                try {
-                    client = new nitro_service(netscalerAppliance.ipAddress,netscalerAppliance.protocol)
-                    client.login(netscalerAppliance.username, netscalerAppliance.password)
-                } catch(nitro_exception error){
-                    logger.error "NITRO Error -> Code " +error.getErrorCode() +" : " +error.getMessage()
-                } catch(Exception e){
-                    logger.error "Java Error -> " + e.getMessage()
-                }
-        }
-
-        public void disconnect() {
-                if (client) {
-                    try {
-                        client.logout()
-                    } catch(nitro_exception error){
-                        logger.error "NITRO Error -> Code " +error.getErrorCode() +" : " +error.getMessage()
-                    } catch(Exception e){
-                        logger.error "Java Error -> " +e.getMessage()
-                    } finally {
-                        client = null
-                    }
-                }
-        }
-
     }
 
-    private def connect(NetscalerAppliance netscalerAppliance) {
-        logger.debug "connecting to netscaler " + netscalerAppliance.ipAddress
-        NetscalerClient netscalerClient = new NetscalerClient(netscalerAppliance)
-        netscalerClient.connect()
-        return netscalerClient.client
 
-    }
+    private void disconnect(ns_session) {
 
-    private void disconnect() {
-        if (netscalerClient) {
-            netscalerClient.disconnect()
+        if (ns_session) {
+            try {
+                ns_session.logout()
+            } catch(nitro_exception error){
+                logger.error "Nitro Error -> Code " + error.getErrorCode() +" : " + error.getMessage()
+            } catch(Exception e){
+                logger.error "Java Error -> " +e.getMessage()
+            }
         }
     }
 
 
     def refreshLbvserverBindings() {
 
+        if (!netscalerAppliance) {
+          logger.error "no netscaler instance found. Was connect not used?"
+        }
+
         logger.debug "using netscaler " + netscalerAppliance.ipAddress
 
-        def client = connect(netscalerAppliance)
+        def client
+
+        try {
+          client = connect(netscalerAppliance)
+        } catch (Exception e) {
+          logger.error "error from netscaler ${netscalerAppliance.ipAddress}: " + e.message
+          return
+        }
+
         def results = lbvserver.get(client)
 
         results.each { result ->
-
            NetscalerLbvserver netscalerLbvserver = NetscalerLbvserver.findByDataCenterAndName(netscalerAppliance.dataCenter, result._name)
 
            if (netscalerLbvserver) {
@@ -152,7 +139,6 @@ class NitroService {
            def boundServices = lbvserver_service_binding.get(client,result._name)
 
            boundServices.each { s ->
-
                NetscalerService netscalerService = NetscalerService.findByNameAndLbvserver(s._servicename,netscalerLbvserver)
 
                if (netscalerService) {
@@ -176,7 +162,7 @@ class NitroService {
 
         }
 
-        disconnect()
+        disconnect(client)
     }
 
     def changeServiceState(String serviceName, String action) {
@@ -197,10 +183,19 @@ class NitroService {
         def command
         def state
         netscalerServices.each { NetscalerService s ->
-                  def client = connect(s.lbvserver.netscaler)
+                  def client
                   def result
-                  def basicService  = new com.citrix.netscaler.nitro.resource.config.basic.service()
-                  def service = basicService.get(client,s.name)
+                  def basicService
+                  def service
+
+            try {
+                client = connect(s.lbvserver.netscaler)
+                basicService  = new com.citrix.netscaler.nitro.resource.config.basic.service()
+                service = basicService.get(client,s.name)
+            } catch (Exception e) {
+                error = "Error from netscaler ${s.lbvserver.netscaler}: " + e.message
+                return
+            }
 
                 switch (action) {
                     case "in":
@@ -235,7 +230,7 @@ class NitroService {
                error += "problem setting ${s.name} to ${command}: ${result.message}. error ${result.errorcode}<br>\n"
             }
 
-            disconnect()
+            disconnect(client)
         }
         return [response: response, error: error]
     }
