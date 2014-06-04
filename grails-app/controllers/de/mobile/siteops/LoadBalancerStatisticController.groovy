@@ -39,7 +39,22 @@ class LoadBalancerStatisticController {
                          hostPrefix = strippedServiceName[0][2]
                  }
 
+
                  statsMap["${lbName}.lbName"] =  lbName
+
+                 if (!hostPrefix) {
+                      def netscalerLbs = NetscalerLbvserver.findAllByName(lbName)
+                      def otherNetscaler = netscalerLbs.findAll { it.services }
+                     def sampleServiceName
+                      (1).times { sampleServiceName = otherNetscaler.services }
+                       def strippedName
+
+                     if (sampleServiceName.name[0]) {
+                         strippedName = sampleServiceName.name[0] =~ /(.*)_([a-zA-Z-_]+)([0-9]*-)/
+                         hostPrefix = strippedName[0][2]
+                     }
+                 }
+
                  statsMap["${lbName}.hostprefix"] = hostPrefix
                  statsMap["${lbName}.total"] =  (statsMap["${lbName}.total"] ?: 0) + lb.services.size()
                  def upServices = lb.services.findAll { it.state == "UP" }.collect { NetscalerService service -> service.name }
