@@ -13,8 +13,9 @@ class PollerJob {
     // TODO - trigger on demand from controller
     static triggers = {
        //cron name: 'poller', startDelay: 10000, cronExpression: "0 0/60 * * * ?"
-       simple name:'init-poller', startDelay:10000, repeatCount: 1
-       cron name: 'poller', startDelay: 10000, cronExpression: "0 0/3 * * * ?"
+       simple name:'init-poller', startDelay:10000, repeatCount: 0
+       //cron name: 'poller', startDelay: 10000, cronExpression: "0 0/10 * * * ?"
+       cron name: 'poller', startDelay: 10000, cronExpression: "0 0/20 * * * ?"
     }
 
     def execute() {
