@@ -139,6 +139,7 @@ class NitroService {
 
         results.each { result ->
            NetscalerLbvserver netscalerLbvserver = NetscalerLbvserver.findByDataCenterAndName(netscalerAppliance.dataCenter, result._name)
+           //logger.info "found lbserver ${result._name} ${result._servicetype} ${result._ipv46}"
 
            if (netscalerLbvserver) {
                netscalerLbvserver.port = result._port
@@ -160,7 +161,7 @@ class NitroService {
 
            boundServices.each { s ->
                NetscalerService netscalerService = NetscalerService.findByNameAndLbvserver(s._servicename,netscalerLbvserver)
-
+               //logger.info "found service ${s._servicename}"
                if (netscalerService) {
                    netscalerService.port = s._port
                    netscalerService.state = s._curstate
@@ -199,6 +200,20 @@ class NitroService {
 
         logger.debug "found services: " + netscalerServices
 
+        // DEBUG BLOCK
+        /**
+        netscalerServices.each { NetscalerService sn ->
+                logger.info "found services for ${sn}"
+                logger.info "-> " + sn.lbvserver
+                logger.info "-> " + sn.ipAddress
+                logger.info "-> " + sn.dataCenter
+        }
+
+        response = "fake response"
+        error = "found services for ${serviceName}: " + netscalerServices
+        return [response: response, error: error]
+        **/
+
         def command
         def state
         netscalerServices.each { NetscalerService s ->
@@ -229,6 +244,15 @@ class NitroService {
                         result = service.enable(client, service)
                         command = "enable"
                         state = "UP"
+                        break
+                    case "forceout":
+                        // with service string parameter
+                        //result = service.disable(client, s.name)
+                        service.set_graceful("NO")
+                        service.set_delay(1000)
+                        result = service.disable(client, service)
+                        command = "disable"
+                        state = "OUT OF SERVICE"
                         break
                     case "out":
                         // with service string parameter

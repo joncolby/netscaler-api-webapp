@@ -55,7 +55,7 @@
 
       <h2>Service functions:</h2>
 
-        <table border="1">
+        <table border="1" width="100%">
         <tr>
         <th>function</th>
         <th>rest syntax</th>
@@ -77,9 +77,15 @@
         </tr>
 
         <tr>
-        <td>Take service (host) OUT OF SERVICE</td>
+        <td>Take service (host) OUT OF SERVICE <b>gracefully<b></b></td>
         <td>${context}service/out/<b>hostname</b> | <b>servicename</b></td>
         <td>${context}service/out/<b>anyserver99-9</b></td>
+        </tr>
+
+        <tr>
+        <td NOWRAP>Take service (host) OUT OF SERVICE <b>forcefully</b></br>(destroy established connections)</td>
+        <td NOWRAP>${context}service/forceout/<b>hostname</b> | <b>servicename</b></td>
+        <td NOWRAP>${context}service/forceout/<b>anyserver99-9</b></td>
         </tr>
 
         <tr>

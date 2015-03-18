@@ -13,6 +13,7 @@ class NetscalerService {
     Date lastUpdated
 
     static belongsTo = [ lbvserver: NetscalerLbvserver ]
+    static hasMany = [ lbvserver: NetscalerLbvserver ]
 
     static constraints = {
     }
