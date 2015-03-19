@@ -1,2 +1,2 @@
 - use Nitro REST API to get inventory
-- set state in DB based on change-state action (dont rely on answer back from service.get_state)
+DONE - set state in DB based on change-state action (dont rely on answer back from service.get_state)

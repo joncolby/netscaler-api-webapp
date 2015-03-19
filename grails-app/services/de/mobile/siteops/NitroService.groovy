@@ -243,7 +243,9 @@ class NitroService {
                         //result = service.enable(client, s.name)
                         result = service.enable(client, service)
                         command = "enable"
-                        state = service.get_svrstate().toString()
+                        // race condition getting current status, hardcode expected status for now
+                        //state = service.get_svrstate().toString()
+                        state = "UP"
                         break
                     case "forceout":
                         // with service string parameter
@@ -261,7 +263,9 @@ class NitroService {
                         service.set_graceful(configured_graceful)
                         service.set_downstateflush(configured_downstateflush)
                         service.set_delay(configured_delay)
-                        state = service.get_svrstate().toString()
+                        // race condition getting current status, hardcode expected status for now
+                        //state = service.get_svrstate().toString()
+                        state = "OUT OF SERVICE"
                         break
                     case "out":
                         // with service string parameter
@@ -270,7 +274,9 @@ class NitroService {
                         service.set_delay(10)
                         result = service.disable(client, service)
                         command = "disable"
-                        state = service.get_svrstate().toString()
+                        // race condition getting current status, hardcode expected status for now
+                        //state = service.get_svrstate().toString()
+                        state = "OUT OF SERVICE"
                         break
                     default:
                         error = "unrecognized action $action"
