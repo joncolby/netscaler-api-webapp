@@ -243,25 +243,34 @@ class NitroService {
                         //result = service.enable(client, s.name)
                         result = service.enable(client, service)
                         command = "enable"
-                        state = "UP"
+                        state = service.get_svrstate().toString()
                         break
                     case "forceout":
                         // with service string parameter
                         //result = service.disable(client, s.name)
-                        service.set_graceful("NO")
-                        service.set_delay(1000)
+                        def configured_graceful = service.get_graceful()
+                        def configured_downstateflush = service.get_downstateflush()
+                        def configured_delay = service.get_delay()
+                        //println "configured graceful " + configured_graceful
+                        service.set_graceful('NO')
+                        service.set_delay(0)
+                        service.set_downstateflush('DISABLED')
                         result = service.disable(client, service)
-                        command = "disable"
-                        state = "OUT OF SERVICE"
+                        //println "graceful? " + service.get_graceful().toString()
+                        command = "forceout"
+                        service.set_graceful(configured_graceful)
+                        service.set_downstateflush(configured_downstateflush)
+                        service.set_delay(configured_delay)
+                        state = service.get_svrstate().toString()
                         break
                     case "out":
                         // with service string parameter
                         //result = service.disable(client, s.name)
-                        service.set_graceful("YES")
-                        service.set_delay(1000)
+                        service.set_graceful('YES')
+                        service.set_delay(10)
                         result = service.disable(client, service)
                         command = "disable"
-                        state = "OUT OF SERVICE"
+                        state = service.get_svrstate().toString()
                         break
                     default:
                         error = "unrecognized action $action"
