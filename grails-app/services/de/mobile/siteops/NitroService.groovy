@@ -139,6 +139,7 @@ class NitroService {
 
         results.each { result ->
            NetscalerLbvserver netscalerLbvserver = NetscalerLbvserver.findByDataCenterAndName(netscalerAppliance.dataCenter, result._name)
+           //logger.info "found lbserver ${result._name} ${result._servicetype} ${result._ipv46}"
 
            if (netscalerLbvserver) {
                netscalerLbvserver.port = result._port
@@ -160,7 +161,7 @@ class NitroService {
 
            boundServices.each { s ->
                NetscalerService netscalerService = NetscalerService.findByNameAndLbvserver(s._servicename,netscalerLbvserver)
-
+               //logger.info "found service ${s._servicename}"
                if (netscalerService) {
                    netscalerService.port = s._port
                    netscalerService.state = s._curstate
@@ -199,6 +200,20 @@ class NitroService {
 
         logger.debug "found services: " + netscalerServices
 
+        // DEBUG BLOCK
+        /**
+        netscalerServices.each { NetscalerService sn ->
+                logger.info "found services for ${sn}"
+                logger.info "-> " + sn.lbvserver
+                logger.info "-> " + sn.ipAddress
+                logger.info "-> " + sn.dataCenter
+        }
+
+        response = "fake response"
+        error = "found services for ${serviceName}: " + netscalerServices
+        return [response: response, error: error]
+        **/
+
         def command
         def state
         netscalerServices.each { NetscalerService s ->
@@ -228,15 +243,39 @@ class NitroService {
                         //result = service.enable(client, s.name)
                         result = service.enable(client, service)
                         command = "enable"
+                        // race condition getting current status, hardcode expected status for now
+                        //state = service.get_svrstate().toString()
                         state = "UP"
+                        break
+                    case "forceout":
+                        // with service string parameter
+                        //result = service.disable(client, s.name)
+                        def configured_graceful = service.get_graceful()
+                        def configured_downstateflush = service.get_downstateflush()
+                        def configured_delay = service.get_delay()
+                        //println "configured graceful " + configured_graceful
+                        service.set_graceful('NO')
+                        service.set_delay(0)
+                        service.set_downstateflush('DISABLED')
+                        result = service.disable(client, service)
+                        //println "graceful? " + service.get_graceful().toString()
+                        command = "forceout"
+                        service.set_graceful(configured_graceful)
+                        service.set_downstateflush(configured_downstateflush)
+                        service.set_delay(configured_delay)
+                        // race condition getting current status, hardcode expected status for now
+                        //state = service.get_svrstate().toString()
+                        state = "OUT OF SERVICE"
                         break
                     case "out":
                         // with service string parameter
                         //result = service.disable(client, s.name)
-                        service.set_graceful("YES")
-                        service.set_delay(1000)
+                        service.set_graceful('YES')
+                        service.set_delay(10)
                         result = service.disable(client, service)
                         command = "disable"
+                        // race condition getting current status, hardcode expected status for now
+                        //state = service.get_svrstate().toString()
                         state = "OUT OF SERVICE"
                         break
                     default:

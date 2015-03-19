@@ -11,7 +11,7 @@ class UrlMappings {
         controller = "action"
         action = [GET:"changeServiceState"]
         constraints {
-          operation(inList:["in","out"])
+          operation(inList:["in","out", "forceout"])
         }
      }
 
